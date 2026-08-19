@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1000" />
+<title>槐安庙线上服务平台 · 千年古庙 · 香火绵延</title>
+<meta name="description" content="槐安庙线上服务平台——入庙参拜预约、还愿服务、在线祈福、周边文创与庙宇介绍。" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ============ 顶部细条 ============ -->
+<div class="topbar">
+  <div class="topbar-in">
+    <span>
+      <a href="#/home">设为首页</a><span class="sep">|</span>
+      <a href="#/home">加入收藏</a><span class="sep">|</span>
+      <a href="#/contact">联系我们</a>
+    </span>
+    <span>临安市槐安镇 · 今日晴 ☀ 26℃ · 您是第 000183742 位访客</span>
+  </div>
+</div>
+
+<!-- ============ 顶部滚动公告栏 ============ -->
+<div id="announce-bar">
+  <span class="announce-label">[公告]</span>
+  <div class="announce-track" id="announce-track">
+    <!-- 由 JS 注入，方便后续动态修改 -->
+  </div>
+</div>
+
+<!-- ============ 网站头部 / 牌匾 ============ -->
+<header class="site-header">
+  <div class="header-in">
+    <div class="plaque">
+      <div class="plaque-frame">
+        <h1 class="plaque-title">槐安庙</h1>
+      </div>
+      <p class="plaque-sub">槐安古庙 · 线上服务平台</p>
+      <p class="plaque-slogan">千年古庙 · 香火绵延 · 有求必应</p>
+    </div>
+    <div class="header-ornament">
+      <img src="assets/dec/header_ornament.jpg" alt="福字香炉祥云装饰" />
+    </div>
+  </div>
+</header>
+
+<!-- ============ 主导航 ============ -->
+<nav class="main-nav" id="main-nav">
+  <div class="main-nav-in">
+    <a href="#/home" data-route="home" class="nav-link">首页</a>
+    <a href="#/reserve" data-route="reserve" class="nav-link">在线预约</a>
+    <a href="#/repay" data-route="repay" class="nav-link">还愿服务</a>
+    <a href="#/pray" data-route="pray" class="nav-link">祈福服务</a>
+    <a href="#/history" data-route="history" class="nav-link">庙宇介绍</a>
+    <a href="#/shop" data-route="shop" class="nav-link">周边文创</a>
+    <a href="#/contact" data-route="contact" class="nav-link">联系我们</a>
+    <a href="#/record" data-route="record" class="nav-link">历年还愿</a>
+    <a href="#/story" data-route="story" class="nav-link">香客故事</a>
+    <a href="#/review" data-route="review" class="nav-link">香客评价</a>
+  </div>
+</nav>
+
+<!-- ============ 主体内容区 ============ -->
+<div class="container">
+
+  <!-- ====== 首页 ====== -->
+  <section class="view" id="view-home">
+    <div class="home-cols">
+
+      <!-- ===== 左栏 ===== -->
+      <aside class="col-left">
+        <div class="panel col-block">
+          <div class="panel-title">站 内 公 告</div>
+          <ul class="notice-list" id="notice-list"><!-- JS 注入 --></ul>
+        </div>
+        <div class="panel col-block">
+          <div class="panel-title">快 速 导 航</div>
+          <ul class="quick-nav">
+            <li><a href="#/reserve">» 在线预约入庙</a></li>
+            <li><a href="#/repay">» 还愿服务登记</a></li>
+            <li><a href="#/pray">» 在线祈福许愿</a></li>
+            <li><a href="#/history">» 庙宇历史沿革</a></li>
+            <li><a href="#/shop">» 周边文创商城</a></li>
+            <li><a href="#/contact">» 联系游客中心</a></li>
+          </ul>
+        </div>
+        <div class="panel col-block">
+          <div class="panel-title">友 情 链 接</div>
+          <div class="friend-imgs">
+            <img src="assets/friend/f00.jpg" alt="中国佛教协会" />
+            <img src="assets/friend/f01.jpg" alt="浙江佛教网" />
+            <img src="assets/friend/f02.jpg" alt="西湖旅游网" />
+            <img src="assets/friend/f03.jpg" alt="杭州灵隐景区" />
+            <img src="assets/friend/f04.jpg" alt="飞来峰景区" />
+            <img src="assets/friend/f05.jpg" alt="佛教在线" />
+          </div>
+        </div>
+      </aside>
+
+      <!-- ===== 中栏 ===== -->
+      <main class="col-center">
+        <!-- Banner（实拍庙宇做底图，标题/副标/按钮为可交互 HTML 浮层） -->
+        <div class="banner">
+          <img class="banner-img" src="assets/banner.jpg" alt="槐安庙实景" />
+          <div class="banner-overlay">
+            <h2 class="banner-title">槐 安 庙</h2>
+            <p class="banner-sub">祈福 · 还愿 · 纳吉</p>
+            <div class="banner-buttons">
+              <a href="#/reserve" class="btn btn-big btn-gold">立即预约</a>
+              <a href="#/repay" class="btn btn-big btn-red">我要还愿</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 老式门户站三大服务入口 -->
+        <div class="home-service-row">
+          <a href="#/reserve" class="service-banner">
+            <strong>在 线 预 约</strong>
+            <span>提前预约　快速入庙</span>
+          </a>
+          <a href="#/pray" class="service-banner">
+            <strong>祈 福 服 务</strong>
+            <span>祈福许愿　法会登记</span>
+          </a>
+          <a href="#/repay" class="service-banner">
+            <strong>还 愿 登 记</strong>
+            <span>感恩还愿　功德圆满</span>
+          </a>
+        </div>
+
+        <!-- 庙宇简介摘要：采用旧门户图文混排 -->
+        <div class="panel home-intro-panel">
+          <div class="panel-title">庙 宇 简 介</div>
+          <div class="old-intro-wrap">
+            <img src="assets/dec/intro_thumb.jpg" alt="槐安庙旧照" class="old-intro-img" />
+            <p class="intro-text" id="home-intro">槐安庙历史悠久，具体始建年代尚有不同说法。庙宇依山而建，红墙黛瓦，古木参天，是本地重要的传统民俗活动场所。每逢初一、十五及传统节庆，香客络绎不绝。</p>
+            <p class="more-link"><a href="#/history">【详细介绍】</a></p>
+          </div>
+        </div>
+
+        <!-- 最新消息 -->
+        <div class="panel home-news-panel">
+          <div class="panel-title">最 新 消 息</div>
+          <ul class="old-news-list">
+            <li><a href="#/reserve">2026年中元节期间预约调整通知</a><span>[08-15]</span></li>
+            <li><a href="#/reserve">关于调整门票预约时间的通知</a><span>[08-12]</span></li>
+            <li><a href="#/pray">七月祈福法会安排</a><span>[08-10]</span></li>
+            <li><a href="#/repay">槐安庙还愿登记流程说明</a><span>[08-01]</span></li>
+            <li><a href="#/shop">夏季周边祈福物件上新</a><span>[07-28]</span></li>
+          </ul>
+          <p class="more-link"><a href="#/home">更多...</a></p>
+        </div>
+      </main>
+
+      <!-- ===== 右栏 ===== -->
+      <aside class="col-right">
+        <div class="panel col-block">
+          <div class="panel-title">快 速 预 约</div>
+          <p class="panel-note" style="padding-bottom:8px">近期香客较多，建议提前一日预约入庙。</p>
+          <div style="text-align:center"><a href="#/reserve" class="btn btn-big btn-red">立即预约入庙</a></div>
+        </div>
+        <div class="panel col-block">
+          <div class="panel-title">还 愿 入 口</div>
+          <div style="text-align:center;padding-bottom:10px"><a href="#/repay" class="btn btn-big btn-gold">我要还愿</a></div>
+        </div>
+        <div class="panel col-block">
+          <div class="panel-title">精 彩 活 动</div>
+          <div style="text-align:center;padding:6px"><img src="assets/dec/fahui.jpg" alt="七月祈福法会" style="width:100%;border:1px solid #e3c878" /></div>
+        </div>
+        <div class="panel col-block">
+          <div class="panel-title">周 边 推 荐</div>
+          <div style="text-align:center;padding:6px;display:flex;justify-content:center;gap:6px;flex-wrap:wrap">
+            <a href="#/shop"><img src="assets/shop2/amulet.jpg" alt="平安符" style="width:62px;border:1px solid #e3c878" /></a>
+            <a href="#/shop"><img src="assets/shop2/bracelet.jpg" alt="手串" style="width:62px;border:1px solid #e3c878" /></a>
+            <a href="#/shop"><img src="assets/shop2/sachet.jpg" alt="香囊" style="width:62px;border:1px solid #e3c878" /></a>
+          </div>
+        </div>
+        <div class="panel col-block">
+          <div class="panel-title">在 线 客 服</div>
+          <p class="panel-note" style="padding-bottom:8px">有问题？点击右下角「在线客服」为您服务。</p>
+          <div style="text-align:center;padding-bottom:10px"><a href="javascript:void(0)" onclick="document.getElementById('cs-button').click()" class="btn btn-gold">联系客服</a></div>
+        </div>
+      </aside>
+
+    </div>
+  </section>
+
+  <!-- ====== 在线预约 ====== -->
+  <section class="view hidden" id="view-reserve">
+    <h1 class="page-title">槐安庙参拜预约</h1>
+    <div class="tip-bar">温馨提示：近期香客较多，请提前预约入庙时间，以免久候。</div>
+
+    <div class="step-bar">
+      <span class="step active">① 选择日期</span>
+      <span class="step">② 选择时段</span>
+      <span class="step">③ 填写信息</span>
+      <span class="step">④ 提交预约</span>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">选 择 日 期</div>
+      <div class="date-grid" id="reserve-dates"><!-- JS 注入 --></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">选 择 时 段</div>
+      <div class="slot-grid" id="reserve-slots"><!-- JS 注入 --></div>
+    </div>
+
+    <form class="panel" id="reserve-form" autocomplete="off">
+      <div class="panel-title">填 写 预 约 信 息</div>
+      <table class="form-table">
+        <tr>
+          <td class="form-label">姓名：</td>
+          <td><input type="text" name="name" id="r-name" maxlength="20" required /></td>
+        </tr>
+        <tr>
+          <td class="form-label">手机号码：</td>
+          <td><input type="tel" name="phone" id="r-phone" maxlength="11" required pattern="1[0-9]{10}" placeholder="11位手机号" /></td>
+        </tr>
+        <tr>
+          <td class="form-label">身份证后四位：</td>
+          <td><input type="text" name="id4" id="r-id4" maxlength="4" required pattern="[0-9Xx]{4}" placeholder="如 1234" /></td>
+        </tr>
+        <tr>
+          <td class="form-label">预约人数：</td>
+          <td>
+            <select name="count" id="r-count">
+              <option value="1">1 人</option>
+              <option value="2">2 人</option>
+              <option value="3">3 人</option>
+              <option value="4">4 人</option>
+              <option value="5">5 人及以上</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td class="form-label">是否首次参拜：</td>
+          <td>
+            <label><input type="radio" name="first" value="是" checked /> 是</label>
+            <label style="margin-left:16px"><input type="radio" name="first" value="否" /> 否</label>
+          </td>
+        </tr>
+        <tr>
+          <td class="form-label">所选日期 / 时段：</td>
+          <td><span id="r-summary" class="summary-text">尚未选择</span></td>
+        </tr>
+      </table>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-red btn-big">下一步 · 提交预约</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- ====== 还愿服务 ====== -->
+  <section class="view hidden" id="view-repay">
+    <h1 class="page-title">还愿服务</h1>
+    <div class="tip-bar">心愿若成，当记所愿。请选择您的还愿事项并预约还愿日期。</div>
+
+    <div class="panel">
+      <div class="panel-title">还 愿 方 式</div>
+      <div id="repay-ways"><!-- JS 注入 --></div>
+    </div>
+
+    <form class="panel" id="repay-form" autocomplete="off">
+      <div class="panel-title">选 择 还 愿 事 项</div>
+      <div class="repay-options" id="repay-options">
+        <label class="repay-opt"><input type="radio" name="repayType" value="香火还愿" checked /> 香火还愿</label>
+        <label class="repay-opt"><input type="radio" name="repayType" value="祈福牌还愿" /> 祈福牌还愿</label>
+        <label class="repay-opt"><input type="radio" name="repayType" value="供灯还愿" /> 供灯还愿</label>
+        <label class="repay-opt"><input type="radio" name="repayType" value="香囊还愿" /> 香囊还愿</label>
+        <label class="repay-opt"><input type="radio" name="repayType" value="其他" /> 其他</label>
+      </div>
+
+      <div class="panel-title" style="margin-top:18px">预 约 还 愿 日 期</div>
+      <div class="date-grid" id="repay-dates"><!-- JS 注入 --></div>
+
+      <table class="form-table" style="margin-top:18px">
+        <tr>
+          <td class="form-label">姓名：</td>
+          <td><input type="text" name="name" id="p-name" maxlength="20" required /></td>
+        </tr>
+        <tr>
+          <td class="form-label">手机号码：</td>
+          <td><input type="tel" name="phone" id="p-phone" maxlength="11" required pattern="1[0-9]{10}" /></td>
+        </tr>
+        <tr>
+          <td class="form-label">所还心愿简述：</td>
+          <td><input type="text" name="wish" id="p-wish" maxlength="40" placeholder="选填，如：求事业顺利" /></td>
+        </tr>
+        <tr>
+          <td class="form-label">所选日期：</td>
+          <td><span id="p-summary" class="summary-text">尚未选择</span></td>
+        </tr>
+      </table>
+
+      <div class="repay-extra" id="repay-extra">
+        <!-- 预留：异常信息展示区域，后续剧情可注入内容 -->
+        <div class="repay-notice">温馨提示：部分还愿事项需提前登记，庙方将另行短信通知。</div>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-red btn-big">提交还愿预约</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- ====== 祈福服务 ====== -->
+  <section class="view hidden" id="view-pray">
+    <h1 class="page-title">在线祈福</h1>
+    <div class="tip-bar">诚心祈愿，填写所求之事。庙方将统一登记于祈愿簿，并于初一十五代为诵念。</div>
+
+    <form class="panel" id="pray-form" autocomplete="off">
+      <table class="form-table">
+        <tr>
+          <td class="form-label">祈愿人姓名：</td>
+          <td><input type="text" name="name" id="y-name" maxlength="20" required /></td>
+        </tr>
+        <tr>
+          <td class="form-label">生日：</td>
+          <td><input type="date" name="birth" id="y-birth" /></td>
+        </tr>
+        <tr>
+          <td class="form-label">祈愿类型：</td>
+          <td>
+            <select name="type" id="y-type">
+              <option value="姻缘">姻缘</option>
+              <option value="事业">事业</option>
+              <option value="财运">财运</option>
+              <option value="健康">健康</option>
+              <option value="学业">学业</option>
+              <option value="家宅">家宅</option>
+              <option value="求子">求子</option>
+              <option value="其他">其他</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td class="form-label">祈愿内容：</td>
+          <td><textarea name="content" id="y-content" rows="4" maxlength="200" placeholder="请写下您的心愿，字数不限（建议200字以内）"></textarea></td>
+        </tr>
+      </table>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-red btn-big">提交祈愿</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- ====== 庙宇介绍 / 历史沿革 ====== -->
+  <section class="view hidden" id="view-history">
+    <h1 class="page-title">庙宇介绍 · 历史沿革</h1>
+    <div class="panel">
+      <div class="panel-title">庙 宇 简 介</div>
+      <p class="intro-text" id="history-intro">槐安庙依山而建，红墙黛瓦，古木参天。庙内主殿供奉本地信众世代敬奉之福德正神，配殿供奉各方善神。每逢初一十五及传统节庆，信众云集，香火鼎盛。</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">历 史 沿 革</div>
+      <div class="timeline" id="history-timeline"><!-- JS 注入 --></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">建 筑 特 色 · 民 俗 活 动</div>
+      <ul class="plain-list" id="history-features">
+        <li>建筑特色：典型南方山地庙宇格局，抬梁式木构，红漆立柱，金漆匾额。</li>
+        <li>民俗活动：正月祈福法会、端午安康礼、中秋拜月、腊月谢神。</li>
+        <li>香火文化：以诚心为上，不尚铺张，香客多以三支清香礼敬。</li>
+        <li>传统节庆：庙会定于每年农历三月，邻近村镇皆有参与。</li>
+        <li>传名习俗：历来香客还愿，除香火供品外，亦有以「传名」「引荐有缘人」为礼者，愿槐安之名不绝于耳、有缘皆知。</li>
+      </ul>
+      <p class="more-link"><em>关于槐安庙早期历史，民间流传有多个版本，详细资料将在后续版本补充。</em></p>
+    </div>
+  </section>
+
+  <!-- ====== 周边文创 / 商城 ====== -->
+  <section class="view hidden" id="view-shop">
+    <h1 class="page-title">周边文创 · 祈福商城</h1>
+    <div class="tip-bar">所有商品均为庙方虔心筹备，寓意吉祥。暂仅支持展示，支付功能建设中。</div>
+    <div class="shop-grid" id="shop-grid"><!-- JS 注入 --></div>
+  </section>
+
+  <!-- ====== 联系我们 ====== -->
+  <section class="view hidden" id="view-contact">
+    <h1 class="page-title">联系我们</h1>
+    <div class="contact-cols">
+      <div class="panel">
+        <div class="panel-title">槐 安 庙 管 理 处</div>
+        <table class="info-table">
+          <tr><td>开放时间：</td><td>每日 08:00 - 18:00（除夕及特殊法会另行公告）</td></tr>
+          <tr><td>预约咨询：</td><td>400-000-0000（工作日 09:00-17:00）</td></tr>
+          <tr><td>地　　址：</td><td>临安市槐安镇槐荫山路 1 号</td></tr>
+          <tr><td>交通方式：</td><td>公交 12 / 38 路至「槐安庙」站；自驾导航搜索「槐安庙游客服务中心」</td></tr>
+        </table>
+      </div>
+      <div class="panel">
+        <div class="panel-title">游 客 服 务 中 心</div>
+        <p>现场设有游客服务中心，提供行李寄存、轮椅借用、免费茶饮与导览手册。</p>
+        <p>如需在线咨询，请点击页面右下角「在线客服」。</p>
+        <p class="panel-note">若您愿将槐安庙引荐予有缘亲友，使香火相传、善缘广结，亦是功德一件。</p>
+        <p class="more-link"><a href="#/contact" onclick="document.getElementById('feedback-box').style.display='block';return false;">» 我要留言 / 意见反馈</a></p>
+        <p class="more-link"><a href="#/about">» 关于本站 / 网站沿革</a></p>
+        <div id="feedback-box" class="feedback-box" style="display:none">
+          <form id="feedback-form">
+            <input type="text" id="fb-name" placeholder="称呼（选填）" style="width:100%;margin-bottom:6px" />
+            <textarea id="fb-text" rows="3" placeholder="您的意见或建议" style="width:100%"></textarea>
+            <div class="form-actions" style="margin-top:6px">
+              <button type="submit" class="btn btn-gold">提交反馈</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== 历年还愿记录 ====== -->
+  <section class="view hidden" id="view-record">
+    <h1 class="page-title">历年还愿记录</h1>
+    <div class="tip-bar">以下为近年来部分香客还愿档案（依年份排列，节选公开）。点击「详情」可查看该条记录的整理说明。</div>
+    <div class="panel">
+      <div class="panel-title">还 愿 档 案</div>
+      <div class="record-wrap">
+        <table class="record-table" id="record-list"><!-- JS 注入 --></table>
+      </div>
+    </div>
+    <div class="today-visits" id="today-visits-record"></div>
+  </section>
+
+  <!-- ====== 香客祈福故事 ====== -->
+  <section class="view hidden" id="view-story">
+    <h1 class="page-title">香客祈福故事</h1>
+    <div class="tip-bar">往来香客留下的祈福与还愿故事，由庙方整理于此，以志诚心、亦励来者。</div>
+    <div class="panel">
+      <div class="panel-title">往 来 香 客</div>
+      <ul class="story-list" id="story-list"><!-- JS 注入 --></ul>
+    </div>
+    <div class="today-visits" id="today-visits-story"></div>
+  </section>
+
+  <!-- ====== 香客评价 ====== -->
+  <section class="view hidden" id="view-review">
+    <h1 class="page-title">香客评价</h1>
+    <div class="tip-bar">香客在各平台与现场留下的真实评价，庙方整理如下，供后来者参考。</div>
+    <div class="panel">
+      <div class="panel-title">香 客 留 言</div>
+      <ul class="review-list" id="review-list"><!-- JS 注入 --></ul>
+    </div>
+    <div class="today-visits" id="today-visits-review"></div>
+  </section>
+
+  <!-- ====== 关于本站 / 网站沿革 ====== -->
+  <section class="view hidden" id="view-about">
+    <h1 class="page-title">关于本站 · 网站沿革</h1>
+    <div class="panel">
+      <div class="panel-title">网 站 沿 革</div>
+      <p class="intro-text" id="about-text"></p>
+    </div>
+    <div class="panel">
+      <div class="panel-title">资 料 来 源</div>
+      <ul class="plain-list">
+        <li>还愿记录与祈福故事，多取自香客自愿登记及庙方祈愿簿整理。</li>
+        <li>部分早期内容由热心香客协助录入，后经管理处与多位义工陆续增补。</li>
+        <li>本站自 2019 年起逐步上线，内容随维护更新而逐年增加。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ====== 404（自定义，后续可用） ====== -->
+  <section class="view hidden" id="view-404">
+    <div class="panel" style="text-align:center;padding:60px 20px">
+      <h1 class="page-title" style="color:#caa53e">4 0 4</h1>
+      <p class="intro-text">您访问的页面暂时无法找到。也许它从未存在过，也许只是被时间遗忘了。</p>
+      <p class="more-link"><a href="#/home">» 返回首页</a></p>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============ 网站底部 ============ -->
+<footer class="site-footer">
+  <div class="friend-links">
+    友情链接：
+    <a href="#/home">临安旅游网</a> |
+    <a href="#/home">江南民俗文化网</a> |
+    <a href="#/home">地方文化研究会</a> |
+    <a href="#/home">古建保护联盟</a> |
+    <a href="#/home">网站地图</a>
+  </div>
+  <div class="footer-line">
+    <a href="#/contact">联系我们</a> ·
+    管理员信箱：<a href="mailto:webmaster@huai-an.example">webmaster@huai-an.example</a> ·
+    本站访问人数：<span id="visit-count">000183742</span>
+  </div>
+  <div class="footer-line">
+    建议使用 IE6.0+ / Chrome 浏览器，最佳浏览分辨率 1024×768
+  </div>
+  <div class="footer-copy">
+    版权所有 © 槐安庙游客服务中心　ICP备 00000000 号　浙ICP备081010203号
+  </div>
+  <div class="footer-small">
+    未经许可，不得转载或用于商业用途。
+  </div>
+</footer>
+
+<!-- ============ 右下角在线客服 ============ -->
+<div id="cs-button" title="槐安庙游客服务中心">
+  <span class="cs-avatar" aria-hidden="true">
+    <svg viewBox="0 0 40 40" width="34" height="34">
+      <circle cx="20" cy="20" r="19" fill="#caa53e" stroke="#7a1414" stroke-width="2"/>
+      <circle cx="14" cy="16" r="2.4" fill="#5c1212"/>
+      <circle cx="26" cy="16" r="2.4" fill="#5c1212"/>
+      <path d="M13 25 Q20 31 27 25" fill="none" stroke="#5c1212" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </span>
+  <span class="cs-text">在线客服</span>
+</div>
+
+<div id="cs-panel" class="hidden">
+  <div class="cs-header">
+    <span>槐安庙游客服务中心</span>
+    <span class="cs-status">● 在线</span>
+    <button id="cs-close" class="cs-close" title="关闭">×</button>
+  </div>
+  <div class="cs-body" id="cs-body">
+    <div class="cs-msg cs-bot">您好，欢迎来到槐安庙，请问有什么可以帮助您的？</div>
+  </div>
+  <div class="cs-quick" id="cs-quick"><!-- JS 注入快捷问题 --></div>
+  <div class="cs-input-row">
+    <input type="text" id="cs-input" placeholder="请输入您的问题…" />
+    <button id="cs-send" class="btn btn-gold btn-sm">发送</button>
+  </div>
+</div>
+
+<!-- ============ 弹窗挂载点 ============ -->
+<div id="modal-root"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

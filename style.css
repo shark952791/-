@@ -1,0 +1,698 @@
+/* =========================================================
+   槐安庙线上服务平台 · 红金三栏模板样式
+   风格：地方旅游 / 民俗庙宇官网 · 早期中文互联网 · 宋体 · 蓝链紫已访问
+   ========================================================= */
+
+:root{
+  --red-deep:#5c0a0a;
+  --red:#a81616;
+  --red-bright:#b81a1a;
+  --red-nav:#8a1212;
+  --gold:#b8902f;          /* 暗金 / 土金 */
+  --gold-light:#e3c878;
+  --gold-deep:#8a6a1e;
+  --cream:#fff8ea;
+  --paper:#f0e2c4;        /* 旧米黄页面底 */
+  --ink:#3a1a1a;
+  --link:#0000ee;          /* 经典蓝链接 */
+  --link-visited:#551a8b;  /* 经典紫：已访问 */
+  --line:#b8902f;
+  --hard:#4a0808;          /* 硬阴影色 */
+  --font-site:"SimSun","宋体","NSimSun","STSong",serif;
+}
+
+*{ box-sizing:border-box; }
+
+html,body{
+  margin:0; padding:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--font-site);   /* 和底部小字链接一致的宋体 */
+  font-size:13px;
+  line-height:1.6;
+}
+
+input,button,select,textarea{
+  font-family:var(--font-site);
+  font-size:13px;
+}
+
+a{ color:var(--link); text-decoration:underline; }
+a:hover{ color:#b81a1a; }
+a:visited{ color:var(--link-visited); }
+
+/* ====================== 顶部细条 ====================== */
+.topbar{
+  background:var(--red-deep);
+  color:#ffe9b8;
+  font-size:11px;
+  padding:2px 0;
+}
+.topbar-in{
+  width:1000px; margin:0 auto;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.topbar a{ color:#ffe9b8; text-decoration:none; }
+.topbar a:hover{ text-decoration:underline; }
+.topbar .sep{ color:#caa53e; margin:0 6px; }
+
+/* ====================== 滚动公告栏 ====================== */
+#announce-bar{
+  background:#7a0f0f;
+  color:#ffe9b8;
+  border-top:1px solid var(--gold);
+  border-bottom:1px solid var(--gold);
+  font-size:12px;
+  overflow:hidden;
+  white-space:nowrap;
+  padding:3px 0;
+}
+.announce-label{
+  display:inline-block;
+  background:var(--gold);
+  color:#5c0a0a;
+  font-weight:bold;
+  padding:1px 8px;
+  margin:0 8px;
+  border:1px solid var(--gold-light);
+}
+.announce-track{
+  display:inline-block;
+  padding-left:100%;
+  animation:marquee 28s linear infinite;
+}
+.announce-track span{ margin-right:60px; }
+@keyframes marquee{ from{ transform:translateX(0);} to{ transform:translateX(-100%);} }
+
+/* ====================== 头部（红底 + 牌匾 + 装饰图） ====================== */
+.site-header{
+  background:linear-gradient(180deg,#b81a1a 0%,#8a1212 100%);
+  border-bottom:3px solid var(--gold);
+  padding:10px 0 12px;
+}
+.header-in{
+  width:1000px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.plaque{ text-align:left; }
+.plaque-frame{
+  display:inline-block;
+  background:linear-gradient(180deg,#e3c878,#b8902f);
+  border:2px solid #5c0a0a;
+  padding:2px 18px;
+  box-shadow:2px 2px 0 rgba(0,0,0,.35);
+}
+.plaque-title{
+  margin:0;
+  font-family:var(--font-site);
+  font-weight:bold;
+  font-size:30px;
+  letter-spacing:8px;
+  color:#5c0a0a;
+  text-shadow:1px 1px 0 #f3e3a0;
+}
+.plaque-sub{
+  margin:4px 0 0;
+  color:#ffe9b8;
+  font-size:13px;
+  letter-spacing:2px;
+}
+.plaque-slogan{
+  margin:2px 0 0;
+  color:#ffd97a;
+  font-size:12px;
+  letter-spacing:1px;
+}
+.header-ornament img{
+  width:96px; height:auto;
+  border:1px solid var(--gold-light);
+  background:#7a0f0f;
+}
+
+/* ====================== 主导航 ====================== */
+.main-nav{
+  background:var(--red-nav);
+  border-bottom:2px solid var(--gold);
+}
+.main-nav-in{
+  width:1000px; margin:0 auto;
+  display:flex; flex-wrap:wrap;
+}
+.nav-link{
+  display:block;
+  padding:7px 18px;
+  color:#ffe9b8 !important;
+  text-decoration:none;
+  font-size:14px;
+  letter-spacing:2px;
+  border-right:1px solid #6a0d0d;
+  background:linear-gradient(180deg,#9a1616,#7a0f0f);
+}
+.nav-link:first-child{ border-left:1px solid #6a0d0d; }
+.nav-link:hover{ background:linear-gradient(180deg,#b81a1a,#8a1212); color:#fff !important; }
+.nav-link.active{
+  background:linear-gradient(180deg,#e3c878,#b8902f);
+  color:#5c0a0a !important;
+  font-weight:bold;
+}
+
+/* ====================== 容器 ====================== */
+.container{
+  width:1000px;
+  margin:10px auto;
+  background:var(--paper);
+}
+
+/* ====================== 首页三栏 ====================== */
+.home-cols{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+}
+.col-left{ width:212px; flex:0 0 212px; }
+.col-center{ flex:1 1 auto; min-width:0; }
+.col-right{ width:236px; flex:0 0 236px; }
+.col-block{ margin-bottom:10px; }
+
+/* ====================== 通用面板（红边 + 金标题条） ====================== */
+.panel{
+  background:var(--cream);
+  border:2px solid var(--gold);
+  box-shadow:2px 2px 0 rgba(74,8,8,.35);
+  margin-bottom:10px;
+}
+.panel-title{
+  background:linear-gradient(180deg,#b81a1a,#8a1212);
+  color:#ffe9b8;
+  font-weight:bold;
+  font-size:13px;
+  letter-spacing:3px;
+  padding:4px 10px;
+  border-bottom:1px solid var(--gold);
+}
+.panel-note{
+  font-size:12px;
+  color:#6a3a1a;
+  padding:6px 10px 0;
+  margin:0;
+}
+.intro-text{
+  font-size:13px;
+  line-height:1.8;
+  padding:8px 12px;
+  text-indent:2em;
+  margin:0;
+}
+.more-link{ padding:4px 12px 10px; font-size:12px; }
+
+/* ====================== 站内公告列表 ====================== */
+.notice-list{ list-style:none; margin:0; padding:6px 10px; font-size:12px; }
+.notice-list li{ padding:3px 0 3px 14px; position:relative; border-bottom:1px dotted #d8b878; }
+.notice-list li:last-child{ border-bottom:none; }
+.notice-list li::before{ content:"·"; position:absolute; left:2px; color:var(--red); font-weight:bold; }
+.notice-list .new-tag{
+  display:inline-block;
+  background:var(--red); color:#fff;
+  font-size:10px; padding:0 4px; margin-left:4px;
+  animation:blink 1s steps(1) infinite;
+}
+@keyframes blink{ 50%{ opacity:0; } }
+
+/* ====================== 快速导航 / 友情链接小图 ====================== */
+.quick-nav{ list-style:none; margin:0; padding:6px 10px; font-size:12px; }
+.quick-nav li{ padding:3px 0; border-bottom:1px dotted #d8b878; }
+.friend-imgs{ padding:8px; text-align:center; }
+.friend-imgs img{
+  width:88px; height:auto; margin:3px;
+  border:1px solid var(--gold);
+  background:#7a0f0f;
+  display:inline-block;
+}
+
+/* ====================== Banner（实拍庙宇做底图） ====================== */
+.banner{
+  position:relative;
+  border:2px solid var(--gold);
+  overflow:hidden;
+  box-shadow:3px 3px 0 rgba(74,8,8,0.4);
+  background:#caa;
+  margin-bottom:10px;
+}
+.banner-img{
+  display:block; width:100%; height:auto;
+  max-height:380px; object-fit:cover; object-position:center 30%;
+  image-rendering:auto;
+}
+.banner-overlay{
+  position:absolute; inset:0;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center;
+  background:linear-gradient(rgba(60,8,8,0.55), rgba(60,8,8,0.25) 45%, rgba(60,8,8,0.55));
+}
+.banner-title{
+  margin:0; font-family:var(--font-site); font-weight:bold;
+  font-size:38px; letter-spacing:14px; color:#ffe9b8;
+  text-shadow:2px 2px 0 #7a1414, 0 0 6px rgba(0,0,0,.6);
+}
+.banner-sub{ margin:4px 0 12px; color:#fff3cf; font-size:15px; letter-spacing:6px; text-shadow:1px 1px 0 #4a0808; }
+.banner-buttons .btn{ margin:0 8px; }
+
+/* ====================== 首页功能入口 ====================== */
+.home-funcs{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin-bottom:10px;
+}
+.func-card{
+  background:var(--cream);
+  border:2px solid var(--gold);
+  box-shadow:2px 2px 0 rgba(74,8,8,.3);
+  padding:10px 8px;
+  text-align:center;
+}
+.func-icon{ font-size:26px; line-height:1; }
+.func-card h3{ margin:6px 0 4px; font-size:14px; color:var(--red); letter-spacing:1px; }
+.func-card p{ margin:0 0 8px; font-size:12px; color:#5a2a1a; line-height:1.5; }
+
+/* ====================== 今日祈福标签 ====================== */
+.pray-tags{ padding:10px 8px; display:flex; flex-wrap:wrap; gap:6px; }
+.pray-tag{
+  display:inline-block;
+  background:var(--red);
+  color:#ffe9b8 !important;
+  text-decoration:none;
+  font-size:13px;
+  padding:3px 14px;
+  border:1px solid var(--gold-light);
+  box-shadow:1px 1px 0 #4a0808;
+}
+.pray-tag:hover{ background:#d6322f; color:#fff !important; }
+
+/* ====================== 分隔线 ====================== */
+.divider{
+  height:8px;
+  margin:8px 0;
+  background:url(../assets/dec/divider.jpg) repeat-x center/auto 8px;
+  border:none;
+}
+
+/* ====================== 内页通用 ====================== */
+.page-title{
+  font-family:var(--font-site); font-weight:bold;
+  font-size:22px; color:var(--red);
+  text-align:center; letter-spacing:4px;
+  margin:6px 0 8px;
+  padding:6px 0;
+  border-bottom:2px solid var(--gold);
+}
+.tip-bar{
+  background:#fff3d6;
+  border:1px solid var(--gold);
+  color:#7a3a12;
+  font-size:12px;
+  padding:6px 10px;
+  margin-bottom:10px;
+}
+.step-bar{ margin-bottom:10px; font-size:12px; color:#6a3a1a; }
+.step{ margin-right:10px; }
+.step.active{ color:var(--red); font-weight:bold; }
+
+/* ====================== 表单 ====================== */
+.form-table{ width:100%; border-collapse:collapse; }
+.form-table td{ padding:6px 8px; vertical-align:middle; font-size:13px; }
+.form-label{ width:140px; text-align:right; color:#5a2a1a; white-space:nowrap; }
+.form-table input[type=text],
+.form-table input[type=tel],
+.form-table input[type=date],
+.form-table select,
+.form-table textarea{
+  width:100%;
+  border:1px solid #a07a2a;
+  background:#fffdf6;
+  padding:3px 6px;
+  color:var(--ink);
+}
+.summary-text{ color:var(--red); font-weight:bold; }
+.form-actions{ text-align:center; padding:12px 0 4px; }
+
+/* ====================== 日期选择网格（内页：预约 / 还愿） ====================== */
+.date-grid{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:6px;
+  padding:10px;
+}
+.date-cell{
+  border:1px solid #a07a2a;
+  background:#fffdf6;
+  text-align:center;
+  padding:6px 2px;
+  cursor:pointer;
+  box-shadow:1px 1px 0 rgba(74,8,8,.25);
+}
+.date-cell:hover{ background:#fff3d6; }
+.date-cell.full{ background:#e8dcc0; color:#999; cursor:not-allowed; border-color:#c9b58a; }
+.date-cell.selected{ background:var(--red-bright); color:#ffe9b8; border-color:var(--red-deep); }
+.date-day{ font-size:13px; font-weight:bold; color:var(--ink); }
+.date-status{ font-size:11px; margin-top:2px; }
+.st-ok{ color:#1a7a2a; }
+.st-low{ color:#b85a00; }
+.st-full{ color:#999; }
+
+/* ====================== 时段选择网格（内页：预约） ====================== */
+.slot-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:6px;
+  padding:10px;
+}
+.slot-cell{
+  border:1px solid #a07a2a;
+  background:#fffdf6;
+  text-align:center;
+  padding:8px 2px;
+  cursor:pointer;
+  box-shadow:1px 1px 0 rgba(74,8,8,.25);
+}
+.slot-cell:hover{ background:#fff3d6; }
+.slot-cell.full{ background:#e8dcc0; color:#999; cursor:not-allowed; border-color:#c9b58a; }
+.slot-cell.selected{ background:var(--red-bright); color:#ffe9b8; border-color:var(--red-deep); }
+.slot-time{ font-size:13px; font-weight:bold; color:var(--ink); }
+.slot-left{ font-size:11px; margin-top:2px; color:#5a2a1a; }
+
+/* ====================== 预约成功二维码 ====================== */
+.qr-box{ display:inline-block; border:1px solid #333; padding:4px; background:#fff; margin:6px auto; }
+.qr-num{ font-size:13px; color:var(--red); font-weight:bold; margin-top:4px; }
+
+/* ====================== 按钮（早期 Win 风立体按钮） ====================== */
+.btn{
+  display:inline-block;
+  font-family:var(--font-site);
+  font-weight:bold;
+  font-size:13px;
+  letter-spacing:1px;
+  padding:4px 16px;
+  color:#3a1a1a !important;
+  text-decoration:none;
+  cursor:pointer;
+  border-style:solid;
+  border-width:2px;
+  border-color:#e3c878 #8a6a1e #8a6a1e #e3c878;  /* 上左亮 下右暗 */
+  background:#b8902f;
+  box-shadow:2px 2px 0 var(--hard);
+}
+.btn:hover{ filter:brightness(1.06); }
+.btn:active{
+  border-color:#8a6a1e #e3c878 #e3c878 #8a6a1e;  /* 按下反向 */
+  box-shadow:1px 1px 0 var(--hard);
+  transform:translate(1px,1px);
+}
+.btn-gold{ background:#b8902f; color:#3a1a1a !important; }
+.btn-red{ background:#b81a1a; color:#ffe9b8 !important; border-color:#e3c878 #5c0a0a #5c0a0a #e3c878; }
+.btn-big{ font-size:15px; padding:6px 22px; letter-spacing:2px; }
+.btn-sm{ font-size:12px; padding:2px 10px; }
+
+/* ====================== 还愿 ====================== */
+.repay-options{ padding:10px; display:flex; flex-wrap:wrap; gap:10px 18px; font-size:13px; }
+.repay-opt{ color:#5a2a1a; }
+.repay-extra{ padding:0 10px 10px; }
+.repay-notice{
+  background:#fff3d6; border:1px dashed var(--gold);
+  color:#7a3a12; font-size:12px; padding:6px 10px;
+}
+
+/* ====================== 时间轴 ====================== */
+.timeline{ padding:10px 14px; }
+.timeline-item{ border-left:3px solid var(--gold); padding:4px 0 12px 14px; position:relative; }
+.timeline-item::before{
+  content:""; position:absolute; left:-7px; top:6px;
+  width:10px; height:10px; background:var(--red); border:2px solid var(--gold); border-radius:50%;
+}
+.timeline-year{ font-weight:bold; color:var(--red); font-size:14px; }
+.timeline-text{ font-size:13px; color:#5a2a1a; }
+.plain-list{ padding:8px 28px; font-size:13px; color:#5a2a1a; }
+
+/* ====================== 商城 ====================== */
+.shop-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; padding:10px; }
+.shop-card{
+  background:var(--cream);
+  border:2px solid var(--gold);
+  box-shadow:2px 2px 0 rgba(74,8,8,.3);
+  text-align:center; padding:8px 6px;
+}
+.shop-thumb{
+  width:100%; height:74px;
+  background:#7a0f0f center/cover no-repeat;
+  border:1px solid var(--gold-light);
+  display:flex; align-items:center; justify-content:center;
+  font-size:30px; color:#ffe9b8;
+  overflow:hidden;
+}
+.shop-thumb img{ width:100%; height:100%; object-fit:cover; }
+.shop-name{ font-size:12px; color:#5a2a1a; margin:6px 0 2px; }
+.shop-price{ font-size:13px; color:var(--red); font-weight:bold; margin-bottom:6px; }
+
+/* ====================== 联系我们 ====================== */
+.contact-cols{ display:flex; gap:10px; flex-wrap:wrap; }
+.contact-cols .panel{ flex:1 1 320px; }
+.info-table{ width:100%; border-collapse:collapse; font-size:13px; }
+.info-table td{ padding:7px 10px; border-bottom:1px dotted #d8b878; vertical-align:top; }
+.info-table td:first-child{ width:90px; color:var(--red); white-space:nowrap; font-weight:bold; }
+.feedback-box{ margin-top:8px; }
+
+/* ====================== 页脚 ====================== */
+.site-footer{
+  width:1000px; margin:14px auto 24px;
+  background:var(--red-nav);
+  color:#ffe9b8;
+  border:2px solid var(--gold);
+  text-align:center;
+  font-size:12px;
+  padding:10px 8px;
+}
+.friend-links{ padding-bottom:6px; border-bottom:1px dotted #caa53e; }
+.friend-links a{ color:#ffe9b8; }
+.footer-line{ padding:4px 0; }
+.footer-line a{ color:#ffe9b8; }
+.footer-copy{ padding-top:4px; color:#ffd97a; font-size:11px; }
+.footer-small{ color:#e3c878; font-size:11px; padding-top:2px; }
+
+/* ====================== 右下角在线客服 ====================== */
+#cs-button{
+  position:fixed; right:0; bottom:120px;
+  background:linear-gradient(180deg,#b81a1a,#7a0f0f);
+  color:#ffe9b8;
+  border:2px solid var(--gold); border-right:none;
+  padding:8px 10px; cursor:pointer;
+  display:flex; flex-direction:column; align-items:center; gap:4px;
+  box-shadow:-2px 2px 0 rgba(0,0,0,.4);
+  z-index:50;
+}
+#cs-button:hover{ filter:brightness(1.08); }
+.cs-avatar{ line-height:0; }
+.cs-text{ font-size:12px; letter-spacing:1px; }
+#cs-panel{
+  position:fixed; right:14px; bottom:14px;
+  width:300px; height:400px;
+  background:var(--cream);
+  border:2px solid var(--gold);
+  box-shadow:3px 3px 0 rgba(74,8,8,.5);
+  display:flex; flex-direction:column;
+  z-index:60;
+}
+.cs-header{
+  background:linear-gradient(180deg,#b81a1a,#8a1212);
+  color:#ffe9b8; font-weight:bold;
+  padding:6px 10px;
+  display:flex; align-items:center; justify-content:space-between;
+  border-bottom:1px solid var(--gold);
+}
+.cs-status{ color:#9be29b; font-size:11px; font-weight:normal; }
+.cs-close{ background:none; border:none; color:#ffe9b8; font-size:18px; cursor:pointer; line-height:1; }
+.cs-body{ flex:1; overflow-y:auto; padding:10px; font-size:13px; }
+.cs-msg{ padding:6px 8px; margin-bottom:8px; border-radius:3px; max-width:85%; }
+.cs-bot{ background:#fdeccd; border:1px solid #e0c089; color:#5a2a1a; align-self:flex-start; }
+.cs-user{ background:#d6e8ff; border:1px solid #9bc0e8; color:#103a5a; align-self:flex-end; margin-left:auto; }
+.cs-quick{ padding:6px; border-top:1px solid #e0c089; display:flex; flex-wrap:wrap; gap:5px; background:#fff8ea; }
+.cs-quick button{
+  font-size:12px; padding:2px 8px;
+  background:#b8902f; color:#3a1a1a;
+  border:1px solid #8a6a1e; cursor:pointer;
+}
+.cs-input-row{ display:flex; padding:6px; border-top:1px solid #e0c089; gap:6px; background:#fff8ea; }
+.cs-input-row input{ flex:1; border:1px solid #a07a2a; padding:4px 6px; }
+.cs-input-row .btn{ box-shadow:none; }
+
+/* ====================== 弹窗 ====================== */
+#modal-root .modal-mask{
+  position:fixed; inset:0; background:rgba(0,0,0,.5);
+  display:flex; align-items:center; justify-content:center; z-index:200;
+}
+#modal-root .modal-box{
+  background:var(--cream); border:3px solid var(--gold);
+  box-shadow:4px 4px 0 rgba(74,8,8,.6);
+  width:380px; max-width:90%; padding:16px; text-align:center;
+}
+#modal-root .modal-box h3{ margin:0 0 10px; color:var(--red); }
+#modal-root .qrcode{
+  width:140px; height:140px; margin:10px auto; background:#fff;
+  border:1px solid #333; display:flex; align-items:center; justify-content:center;
+  font-size:11px; color:#444; background-image:
+    repeating-linear-gradient(0deg,#000 0 4px,transparent 4px 8px),
+    repeating-linear-gradient(90deg,#000 0 4px,transparent 4px 8px);
+  background-blend-mode:multiply;
+  position:relative;
+}
+#modal-root .qrcode::after{
+  content:""; position:absolute; inset:0;
+  background:
+    linear-gradient(45deg,transparent 48%,#000 48% 52%,transparent 52%),
+    linear-gradient(-45deg,transparent 48%,#000 48% 52%,transparent 52%);
+}
+
+/* ====================== 新增内容视图（记录 / 故事 / 评价 / 关于） ====================== */
+.record-wrap{ overflow-x:auto; }
+.record-table{ width:100%; border-collapse:collapse; font-size:12px; }
+.record-table th{
+  background:#f3e3c4; color:#5c0a0a; text-align:left;
+  padding:5px 8px; border-bottom:2px solid var(--gold); font-weight:bold;
+  white-space:nowrap;
+}
+.record-row td{
+  padding:5px 8px; border-bottom:1px dotted #d8b878;
+  color:#5a2a1a; vertical-align:top;
+}
+.record-row:hover{ background:#fff3d6; }
+.rec-detail-link{ font-size:12px; white-space:nowrap; }
+
+.story-list{ list-style:none; margin:0; padding:6px 12px; }
+.story-item{ padding:9px 0; border-bottom:1px dotted #d8b878; }
+.story-item:last-child{ border-bottom:none; }
+.story-tag{ color:var(--red); font-weight:bold; font-size:12px; margin-right:4px; }
+.story-text{ margin:2px 0 4px; font-size:13px; line-height:1.85; }
+.story-by{ font-size:11px; color:#8a6a1e; text-align:right; }
+
+.review-list{ list-style:none; margin:0; padding:8px 12px; }
+.review-item{ padding:6px 0; border-bottom:1px dotted #d8b878; font-size:13px; line-height:1.7; }
+.review-item:last-child{ border-bottom:none; }
+.stars{ color:#c8860a; letter-spacing:1px; }
+.review-text{ color:#5a2a1a; }
+.review-by{ font-size:11px; color:#8a6a1e; }
+.review-status{ font-size:11px; color:#999; }
+.review-hidden-text{ color:#999; font-style:italic; }
+
+.repay-way-line{ font-size:13px; color:#5a2a1a; padding:4px 10px; margin:0; }
+.repay-way-line b{ color:var(--red); }
+
+.today-visits{
+  font-size:11px; color:#8a6a1e; text-align:right;
+  padding:4px 8px 10px; letter-spacing:0;
+}
+
+.record-detail{ font-size:13px; color:#5a2a1a; text-align:left; line-height:1.8; }
+.record-detail p{ margin:4px 0; }
+.record-detail-note{
+  margin-top:8px; padding:8px 10px;
+  background:#fff3d6; border:1px dashed var(--gold);
+  font-size:12px; color:#6a3a1a;
+}
+
+/* ====================== 通用隐藏 ====================== */
+.hidden{ display:none !important; }
+
+/* ====================== 窄屏兜底（保留老站味道，仅不溢出） ====================== */
+@media (max-width:1000px){
+  .topbar-in,.header-in,.main-nav-in,.container,.site-footer{ width:100%; }
+  .home-cols{ flex-direction:column; }
+  .col-left,.col-right,.col-center{ width:100%; flex:1 1 auto; }
+}
+
+/* =========================================================
+   2026-08-19 视觉返工：向 2005-2012 中文地方门户 / 寺庙官网靠拢
+   ========================================================= */
+body{
+  background:#7d0909 url(../assets/bg_tile.jpg) repeat;
+  font-size:12px;
+  line-height:1.55;
+}
+.topbar{
+  background:#f4dda2;
+  color:#351707;
+  border-bottom:1px solid #9c630c;
+  padding:3px 0;
+}
+.topbar a{color:#351707;text-decoration:none}.topbar .sep{color:#a66a0c}
+#announce-bar{background:#8d0505;border-top:0;padding:2px 0;font-size:12px}
+.site-header{
+  background:#a60000 url(../assets/bg_tile.jpg) repeat;
+  border-top:1px solid #dcbb58;
+  border-bottom:1px solid #f0ce6a;
+  padding:6px 0 7px;
+}
+.header-in{height:112px;position:relative;overflow:hidden;padding:0 10px}
+.header-in:before{
+  content:"";position:absolute;right:118px;top:-45px;width:255px;height:200px;
+  background:url(../assets/dec/header_ornament.jpg) center 34%/150px auto no-repeat;
+  opacity:.88;filter:saturate(.8) contrast(1.05);
+}
+.plaque{position:relative;z-index:2;padding-left:16px}
+.plaque-frame{background:none;border:0;box-shadow:none;padding:0}
+.plaque-title{
+  font-size:48px;line-height:1.05;letter-spacing:10px;color:#f5ce55;
+  text-shadow:1px 1px 0 #5c0808,2px 2px 0 #7d0a0a,0 0 1px #fff0a8;
+}
+.plaque-sub{display:none}
+.plaque-slogan{font-size:17px;color:#f1c757;letter-spacing:5px;margin-top:10px;font-weight:bold}
+.header-ornament{position:relative;z-index:2}
+.header-ornament img{width:128px;height:96px;object-fit:cover;border:1px solid #dfbd56;filter:saturate(.85) contrast(.95)}
+.main-nav{border-top:1px solid #d6ae43;border-bottom:2px solid #e4c45a;background:#8b0505}
+.main-nav-in{justify-content:center;display:flex;flex-wrap:nowrap;overflow:hidden}
+.nav-link{
+  flex:0 0 auto;padding:6px 13px;font-size:13px;letter-spacing:1px;
+  background:#900808;border-right:1px solid #d9b65b!important;border-left:0!important;
+  color:#ffe1a1!important;font-weight:bold;text-decoration:none;
+}
+.nav-link:hover,.nav-link.active{background:#b31010;color:#fff0b8!important}
+.container{margin:8px auto;background:#f3e5c5;border-left:1px solid #bc8a30;border-right:1px solid #bc8a30;padding:8px}
+.home-cols{gap:8px}.col-left{width:214px;flex-basis:214px}.col-right{width:238px;flex-basis:238px}.col-block{margin-bottom:7px}
+.panel{border:1px solid #b87a20;box-shadow:none;margin-bottom:7px;background:#fbf2dc}
+.panel-title{
+  margin:2px;background:#a70808;border:1px solid #e2c061;border-bottom:1px solid #8c540b;
+  padding:2px 7px;text-align:center;color:#ffe4a0;font-size:13px;letter-spacing:2px;
+  text-shadow:1px 1px #620606;
+}
+.panel-note{font-size:11px;padding:5px 7px 0}.intro-text{font-size:12px;line-height:1.75;padding:5px 8px}.more-link{padding:2px 8px 6px;text-align:right}
+.notice-list,.quick-nav{font-size:12px;padding:5px 8px}.notice-list li,.quick-nav li{padding:2px 0;border-bottom:1px dotted #c9a968}
+.friend-imgs{padding:5px}.friend-imgs img{width:82px;margin:2px;border:1px solid #a27625;filter:saturate(.75) contrast(.95)}
+.banner{border:1px solid #ae711c;box-shadow:none;margin-bottom:7px;height:242px;background:#8f1a0d}
+.banner-img{width:100%;height:100%;object-fit:cover;object-position:center 35%;filter:saturate(.78) contrast(.92) brightness(.93)}
+.banner-overlay{justify-content:flex-end;padding-bottom:14px;background:linear-gradient(180deg,rgba(40,0,0,.05),rgba(60,0,0,.05) 58%,rgba(70,0,0,.65))}
+.banner-title{display:none}.banner-sub{font-size:22px;letter-spacing:4px;font-weight:bold;color:#ffe09a;margin:0;text-shadow:2px 2px 0 #8c0000,-1px -1px 0 #8c0000}
+.banner-sub:before{content:"— 心诚则灵，善愿得成 —";font-size:22px}.banner-sub{font-size:0}
+.banner-buttons{display:none}
+.home-service-row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:7px}
+.service-banner{
+  display:block;text-decoration:none!important;text-align:center;color:#ffd467!important;
+  background:linear-gradient(#b5120f,#8f0707);border:3px double #d9aa3c;padding:10px 4px 8px;
+  box-shadow:inset 0 0 0 1px #671010;
+}
+.service-banner strong{display:block;font-size:20px;letter-spacing:4px;text-shadow:1px 1px 0 #5e0505;margin-bottom:3px}
+.service-banner span{font-size:11px;color:#f4c95a;letter-spacing:1px}.service-banner:hover{background:#bf1814}
+.old-intro-wrap{padding:7px 8px 6px;min-height:104px}.old-intro-img{float:left;width:145px;height:91px;object-fit:cover;margin:0 10px 4px 0;border:1px solid #9b661a;padding:2px;background:#fff5dd;filter:saturate(.72) contrast(.9)}
+.old-intro-wrap .intro-text{padding:0;text-indent:2em}.old-intro-wrap .more-link{padding:0 2px 0;text-align:right}
+.old-news-list{list-style:none;margin:0;padding:5px 9px;font-size:12px}.old-news-list li{display:flex;gap:8px;border-bottom:1px dotted #c5a15c;padding:2px 2px}.old-news-list li:before{content:"›";color:#a50a0a}.old-news-list a{flex:1}.old-news-list span{color:#a50a0a;white-space:nowrap}
+.pray-tags{gap:3px;padding:6px}.pray-tag{padding:2px 9px;font-size:12px;box-shadow:none;border:1px solid #a45f17;background:#a90b0b}
+.btn{box-shadow:none;border-width:1px;padding:3px 12px;font-size:12px}.btn-big{font-size:13px;padding:5px 15px}
+.page-title{font-size:18px;margin:2px 0 7px;padding:4px;background:#f5e4bb;border:1px solid #b77d22;color:#9d0909}
+.tip-bar{padding:4px 8px;margin-bottom:7px}.date-grid,.slot-grid{gap:3px;padding:6px}.date-cell,.slot-cell{box-shadow:none;padding:4px 2px}
+.shop-grid{gap:6px;padding:6px}.shop-card{border:1px solid #b98932;box-shadow:none;padding:5px}.shop-thumb{height:72px}
+.site-footer{margin:0 auto 14px;background:#9b0808;border:1px solid #d7ad46;padding:5px 8px;font-size:11px}.friend-links{padding-bottom:3px}.footer-line{padding:2px 0}.footer-copy,.footer-small{font-size:10px}
+#cs-button{
+  right:0;bottom:18px;padding:4px 7px 4px 5px;flex-direction:row;gap:4px;
+  border:1px solid #e2bf59;border-right:0;box-shadow:1px 1px 0 #4c0505;background:#fff1c7;color:#0751ad;
+}
+#cs-button svg{width:28px!important;height:28px!important}.cs-text{font-size:12px;color:#0751ad;font-weight:bold}
+#cs-panel{right:8px;bottom:50px;width:286px;height:350px;border:1px solid #a25b16;box-shadow:2px 2px 0 rgba(50,0,0,.35)}
+.cs-header{padding:4px 7px;background:#a30b0b}.cs-body{padding:7px;font-size:12px}.cs-msg{border-radius:0;padding:4px 6px;margin-bottom:5px}.cs-quick{padding:4px;gap:3px}.cs-quick button{font-size:11px;padding:1px 5px}.cs-input-row{padding:4px}
+@media(max-width:1000px){body{min-width:1000px}.topbar-in,.header-in,.main-nav-in,.container,.site-footer{width:1000px}.home-cols{flex-direction:row}.col-left{width:214px;flex:0 0 214px}.col-right{width:238px;flex:0 0 238px}.col-center{width:auto}}
